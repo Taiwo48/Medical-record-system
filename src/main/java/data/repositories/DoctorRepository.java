@@ -1,4 +1,4 @@
 package data.repositories;
 
-public class DoctorRepository {
+public interface DoctorRepository {
 }

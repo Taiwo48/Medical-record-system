@@ -1,4 +1,4 @@
 package data.repositories;
 
-public class Patients {
+public class Patients implements PatientRepository {
 }
