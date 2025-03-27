@@ -1,44 +1,16 @@
 package data.models;
 
-public class Doctor {
-    public String fullName;
-    public int doctorId;
-    public String email;
-    public String phoneNumber;
+public class Doctor extends User{
     public String department;
     public String speciality;
+    public String doctorId;
 
-    public String getFullName() {
-        return fullName;
-    }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public int getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(int doctorId) {
+    public Doctor(String fullName, String email, String userName, String password, String department, String speciality) {
+        super(fullName, email, userName, password);
         this.doctorId = doctorId;
-    }
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.department = department;
+        this.speciality = speciality;
     }
 
     public String getDepartment() {
@@ -55,6 +27,14 @@ public class Doctor {
 
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
+    }
+
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
     }
 
 }

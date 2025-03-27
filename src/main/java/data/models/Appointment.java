@@ -1,10 +1,18 @@
 package data.models;
 
-public class Appointment {
+public class Appointment extends User {
     private int appointmentId;
     private int patientId;
     private String appointmentDate;
     private int doctorId;
+
+    public Appointment(String fullName, String email, String userName, String password, int appointmentId, int patientId, String appointmentDate, int doctorId) {
+        super(fullName, email, userName, password);
+        this.appointmentId = appointmentId;
+        this.doctorId = doctorId;
+        this.appointmentDate = appointmentDate;
+        this.patientId = patientId;
+    }
 
 
     public int getAppointmentId() {

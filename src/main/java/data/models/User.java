@@ -1,28 +1,28 @@
 package data.models;
 
 public class User {
-    public String fullName;
-    public int userId;
-    public String email;
-    public String userName;
-    public String password;
-//    private Profile profile;
+    private String fullName;
+    private String email;
+    private String userName;
+    private String password;
 
-    public String getPassword() {
-        return password;
+    public User(String fullName, String email, String userName, String password) {
+        this.fullName = fullName;
+        this.email = email;
+        this.userName = userName;
+        this.password = password;
+
+    }
+
+
+
+    public boolean verifyPassword(String password) {
+        return this.password.equals(password);
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
-
-//    public Profile getProfile() {
-//        return profile;
-//    }
-//
-//    public void setProfile(Profile profile) {
-//        this.profile = profile;
-
 
     public String getFullName() {
         return fullName;
@@ -32,13 +32,6 @@ public class User {
         this.fullName = fullName;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getEmail() {
         return email;

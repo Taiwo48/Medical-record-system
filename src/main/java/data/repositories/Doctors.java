@@ -1,6 +1,7 @@
 package data.repositories;
 
 import data.models.Doctor;
+import data.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +9,12 @@ import java.util.List;
 public class Doctors implements DoctorRepository {
 
     private final List<Doctor> doctorList = new ArrayList<>();
+    private int doctorIdCounter = 1;
 
     @Override
     public Doctor save(Doctor doctor) {
         if (isNew(doctor)) {
+            doctor.setDoctorId(generateDoctorId());
             doctorList.add(doctor);
         } else {
             updateDoctor(doctor);
@@ -22,7 +25,7 @@ public class Doctors implements DoctorRepository {
 
     private void updateDoctor(Doctor doctor) {
         for (int index = 0; index < doctorList.size(); index++) {
-            if (doctorList.get(index).doctorId == doctor.doctorId) {
+            if (doctorList.get(index).doctorId.equals(doctor.doctorId)) {
                 doctorList.set(index, doctor);
                 break;
             }
@@ -31,7 +34,7 @@ public class Doctors implements DoctorRepository {
 
     private boolean isNew(Doctor doctor) {
         for (Doctor newDoctor : doctorList) {
-            if (newDoctor.doctorId == doctor.doctorId) {
+            if (newDoctor.doctorId.equals(doctor.doctorId)) {
                 return false;
             }
         }
@@ -39,34 +42,31 @@ public class Doctors implements DoctorRepository {
 
     }
 
+    public String generateDoctorId() {
+        String doctorId = "Doctor" + doctorIdCounter;
+        doctorIdCounter++;
+        return doctorId;
+    }
+
     @Override
     public long countDoctors() {
-        return 0;
+        return doctorList.size();
     }
 
     @Override
-    public void deleteDoctor(Doctor doctor) {
-
-    }
-
-    @Override
-    public void deleteDoctorById(long id) {
-
-    }
-
-    @Override
-    public Doctor findDoctorById(long id) {
+    public Doctor findDoctorById(String id) {
+        for (Doctor doctor : doctorList) {
+            if (doctor.getDoctorId().equals(id)) {
+                return doctor;
+            }
+        }
         return null;
     }
+
 
     @Override
     public List<Doctor> findDoctors() {
         return List.of();
-    }
-
-    @Override
-    public boolean existsById(long id) {
-        return false;
     }
 
     @Override

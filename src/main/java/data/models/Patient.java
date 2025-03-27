@@ -1,29 +1,32 @@
 package data.models;
 
-public class Patient {
-    public int patientId;
-    public String fullName;
+public class Patient extends User{
+
+//    private int patientId;
     public String dateOfBirth;
     public String gender;
     public String phoneNumber;
-    public int ailment;
+//    public String ailment;
 
 
-    public int getPatientId() {
-        return patientId;
+    public Patient(String fullName, String email, String userName, String password, String dateOfBirth, String gender, String phoneNumber) {
+        super(fullName, email, userName, password);
+//        this.patientId = patientId;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+//        this.ailment = ailment;
+
     }
+//    private String generateInstructorId() {
+//        return "INS" + (instructors.size() + 100000);
+//    }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
-    }
 
-    public String getFullName() {
-        return fullName;
-    }
+//    public void setPatientId(int patientId) {
+//        this.patientId = patientId;
+//    }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
 
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -49,13 +52,6 @@ public class Patient {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getAilment() {
-        return ailment;
-    }
-
-    public void setAilment(int ailment) {
-        this.ailment = ailment;
-    }
 }
 
 
