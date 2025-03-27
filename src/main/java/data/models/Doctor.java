@@ -1,8 +1,8 @@
 package data.models;
 
-public class DoctorProfile {
+public class Doctor {
     public String fullName;
-    public String doctorId;
+    public int doctorId;
     public String email;
     public String phoneNumber;
     public String department;
@@ -16,13 +16,14 @@ public class DoctorProfile {
         this.fullName = fullName;
     }
 
-    public String getDoctorId() {
+    public int getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(String doctorId) {
+    public void setDoctorId(int doctorId) {
         this.doctorId = doctorId;
     }
+
 
     public String getEmail() {
         return email;

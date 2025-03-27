@@ -6,7 +6,7 @@ public class User {
     public String email;
     public String userName;
     public String password;
-    private Profile profile;
+//    private Profile profile;
 
     public String getPassword() {
         return password;
@@ -16,13 +16,13 @@ public class User {
         this.password = password;
     }
 
-    public profile getProfile() {
-        return profile;
-    }
+//    public Profile getProfile() {
+//        return profile;
+//    }
+//
+//    public void setProfile(Profile profile) {
+//        this.profile = profile;
 
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
 
     public String getFullName() {
         return fullName;

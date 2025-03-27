@@ -1,6 +1,6 @@
 package data.models;
 
-public class PatientProfile {
+public class Patient {
     public int patientId;
     public String fullName;
     public String dateOfBirth;
