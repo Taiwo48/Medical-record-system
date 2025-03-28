@@ -14,4 +14,12 @@ public class Appointments {
         this.appointmentId = appointmentId;
         this.doctorId = doctorId;
     }
+
+    public void viewAvailableDoctors() {
+        System.out.println("Displaying available doctors...");
+    }
+
+    public void scheduleAppointment() {
+        System.out.println("Appointment scheduled for Patient ID: " + patientId);
+    }
 }
