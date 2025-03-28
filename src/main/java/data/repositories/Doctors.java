@@ -66,7 +66,7 @@ public class Doctors implements DoctorRepository {
 
     @Override
     public List<Doctor> findDoctors() {
-        return List.of();
+        return doctorList;
     }
 
     @Override
